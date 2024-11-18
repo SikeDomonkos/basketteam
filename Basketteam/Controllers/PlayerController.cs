@@ -70,10 +70,10 @@ namespace Basketteam.Controllers
         {
             using (var context = new BasketteamContext())
             {
-                var blogger = context.Players.FirstOrDefault(x => x.Id == Id);
-                if (blogger != null)
+                var player = context.Players.FirstOrDefault(x => x.Id == Id);
+                if (player != null)
                 {
-                    var player = new Player();
+                    var player1 = new Player();
                     context.Players.Remove(player);
                     context.SaveChanges();
                     return StatusCode(200, new { message = "Sikeres törlés." });
